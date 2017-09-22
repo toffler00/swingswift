@@ -14,6 +14,7 @@
 		62F091FA1F6D0C8400BA675D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62F091F81F6D0C8400BA675D /* LaunchScreen.storyboard */; };
 		62F092021F6D0E9400BA675D /* rocket-969__340.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62F092011F6D0E9400BA675D /* rocket-969__340.jpg */; };
 		62F092061F6D0F6900BA675D /* 우주부동산여행배경.png in Resources */ = {isa = PBXBuildFile; fileRef = 62F092051F6D0F6900BA675D /* 우주부동산여행배경.png */; };
+		62FD642B1F71F76A0057C9BC /* planetlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62FD642A1F71F76A0057C9BC /* planetlist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		62F091FB1F6D0C8400BA675D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62F092011F6D0E9400BA675D /* rocket-969__340.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "rocket-969__340.jpg"; sourceTree = "<group>"; };
 		62F092051F6D0F6900BA675D /* 우주부동산여행배경.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "우주부동산여행배경.png"; sourceTree = "<group>"; };
+		62FD642A1F71F76A0057C9BC /* planetlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = planetlist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				62F091EF1F6D0C8400BA675D /* AppDelegate.swift */,
 				62F091F11F6D0C8400BA675D /* ViewController.swift */,
+				62FD642A1F71F76A0057C9BC /* planetlist.swift */,
 				62F092041F6D0F4800BA675D /* New Group1 */,
 				62F091F61F6D0C8400BA675D /* Assets.xcassets */,
 				62F092031F6D0EAE00BA675D /* New Group */,
@@ -162,6 +165,7 @@
 			files = (
 				62F091F21F6D0C8400BA675D /* ViewController.swift in Sources */,
 				62F091F01F6D0C8400BA675D /* AppDelegate.swift in Sources */,
+				62FD642B1F71F76A0057C9BC /* planetlist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +327,7 @@
 				62F092001F6D0C8400BA675D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

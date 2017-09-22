@@ -8,7 +8,10 @@
 
 import UIKit
 
+
+
 class ViewController: UIViewController {
+    
     @IBOutlet var displayLabel:UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,29 +89,54 @@ class ViewController: UIViewController {
     
     @IBAction func Caculatorbtn(btn: UIButton)
     {
-        if oper == "+"
-        {
+        let someDictionary: [String: Operation] = [
+            "+" : Operation.add,
+            "-" : Operation.subtract,
+            "*" : Operation.multiply,
+            "/" : Operation.divide,
+]
+        
+        func performOperation(num1: Int, num2: Int, oper: OperationC) -> Int {
+            switch oper {
+            case "+":
+                resultvalue = Int(Inputnum1)! + Int(Inputnum2)!
+                displayLabel.text = String(resultvalue)
+            case "-":
+                resultvalue = Int(Inputnum1)! - Int(Inputnum2)!
+                displayLabel.text = String(resultvalue)
+            case "x":
+                resultvalue = Int(Inputnum1)! * Int(Inputnum2)!
+                displayLabel.text = String(resultvalue)
+            case "/":
+                if Inputnum2 != "0" {
+                    resultvalue = Int(Inputnum1)! / Int(Inputnum2)!
+                    displayLabel.text = String(resultvalue)
+                }
+                displayLabel.text = "오류"
+            default:
+                displayLabel.text = Inputnum1
+
+        }
+        switch oper {
+        case "+":
             resultvalue = Int(Inputnum1)! + Int(Inputnum2)!
             displayLabel.text = String(resultvalue)
-        }
-        if oper == "-"
-        {
+        case "-":
             resultvalue = Int(Inputnum1)! - Int(Inputnum2)!
             displayLabel.text = String(resultvalue)
-        }
-        if oper == "x"
-        {
+        case "x":
             resultvalue = Int(Inputnum1)! * Int(Inputnum2)!
             displayLabel.text = String(resultvalue)
-        }
-        if oper == "/"
-        {
+        case "/":
+            if Inputnum2 != "0" {
             resultvalue = Int(Inputnum1)! / Int(Inputnum2)!
             displayLabel.text = String(resultvalue)
+            }
+            displayLabel.text = "오류"
+        default:
+            displayLabel.text = Inputnum1
         }
         Inputnum1 = String(resultvalue)
-        Inputnum2 = ""
-        oper = ""
         
     }
     @IBAction func ACbtn(btn: UIButton)

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -19,10 +20,13 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+  
+   
     var totalprice: Int = 0
     var typeprice: Int = 0
     var celestialprice: Int = 0
-    var spacename: String = ""
+    var spacename: String?
     var distance: String = ""
     var type: String = ""
     var acoount: Int = 0
@@ -36,34 +40,39 @@ class ViewController: UIViewController {
     @IBOutlet weak var ChangeLabel: UILabel!
     @IBAction func Choicebtn(btn: UIButton)
     {
-        spacename = (btn.titleLabel?.text!)!
-        if spacename == "Jupiter"
-        {
+        
+        guard let title = btn.currentTitle else { return }
+        guard let name = Planet(rawValue: title) else { return }
+        
+        switch name {
+        case .jupiter:
             celestialprice = 630000000
             distance = "6억3천만Km"
             DistanceLabel.text = distance
-        }else if spacename == "Andromeda"
-        {
+        case .andromeda:
             celestialprice = 2500000000
             distance = "250만광년"
             DistanceLabel.text = distance
-        }else
-        {
+        case Planet.moon:
             celestialprice = 38300000
             distance = "38만3천Km"
             DistanceLabel.text = distance
         }
-        DistanceLabel.text = distance
     }
     @IBAction func Triptype(btn: UIButton)
     {
-        type = (btn.titleLabel?.text!)!
-        if type == "편도"
-        {
+        var isOneWay: Bool = false
+        
+        guard let type = btn.currentTitle else { return }
+        
+        isOneWay = type == "편도" ? true : false
+        
+        if isOneWay {
             typeprice = 400000
-        }else{
+        } else {
             typeprice = 1000000
         }
+        
         DisplayLabel.text = type
     }
     @IBAction func Accountbtn(btn: UIButton)
