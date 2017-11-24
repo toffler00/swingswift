@@ -19,8 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        isHarshad = harshad(inputNum: 18)
-        answerLabel.text = String(isHarshad)
+        answerLabel.text = String(harshad(inputNum: 18))
         
         iscollatz = collatz(collatzNum: 6)
         collatzAnswerLB.text = String(iscollatz)
@@ -28,13 +27,9 @@ class ViewController: UIViewController {
         issphereV = Double(sphereV(sphereR: 3))
         sphereVolLB.text = String(issphereV)
         
-        ischeckLeap = checkLeapyear(checkYear: 2000)
-        leapyearLB.text = ischeckLeap
+        leapyearLB.text = checkLeapyear(checkYear: 2000)
+        
     }
-    
-    var isHarshad: Bool = false
-    var inputNum: Int = 0
-    var resultValue: Bool = false
     
     func harshad(inputNum: Int) -> Bool
     {
@@ -47,12 +42,8 @@ class ViewController: UIViewController {
             sumValue += index
             testValue /= 10
         }
-        if inputNum % sumValue == 0 {
-            resultValue = true
-        }else {
-            resultValue = false
-        }
-        return resultValue
+        
+        return inputNum % sumValue == 0
     }
     
     
@@ -76,37 +67,32 @@ class ViewController: UIViewController {
         }
         return count
     }
-
+    
     var issphereV: Double = 0
-    var sphereR: Double = 0
-    var sphereVolume: Double = 0
     func sphereV(sphereR : Double) -> Double
     {
+        var sphereVolume: Double = 0
         sphereVolume = (sphereR * sphereR * sphereR) / 3 * 4 * 3.14
         return sphereVolume
     }
     
     
     
-    var ischeckLeap: String = ""
+    //    var ischeckLeap: String = ""
     var checkYear: Int = 0
-    var resultLeapyear: String = ""
+    
     func checkLeapyear(checkYear: Int) -> String
     {
+        var resultLeapyear: String = ""
         if checkYear % 4 == 0 || checkYear % 400 == 0 && checkYear % 100 != 0
         {
-            self.resultLeapyear = "\(checkYear) 은 윤년이 입니다."
+            resultLeapyear = "\(checkYear) 은 윤년이 입니다."
         }else {
-        resultLeapyear = "\(checkYear)은 윤년이 아닙니다."
+            resultLeapyear = "\(checkYear)은 윤년이 아닙니다."
         }
-            return resultLeapyear
+        return resultLeapyear
     }
-    
-    
-    
-    
-    
-
 }
+
 
 
